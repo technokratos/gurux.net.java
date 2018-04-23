@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.gurux</groupId>
   <artifactId>gurux.net</artifactId>
-  <version>1.0.16</version>
+  <version>1.0.16-LARTECH</version>
   <packaging>jar</packaging>
   <name>gurux.net.java</name>
   <url>http://www.gurux.org</url>
@@ -31,17 +31,28 @@
   <scm>
     <url>https://github.com/gurux/gurux.net.java/</url>
   </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>lartech.repo</id>
+            <url>https://artifactory.lar.tech/artifactory/sp-releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>lartech.repo</id>
+            <url>https://artifactory.lar.tech/artifactory/sp-snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
   <!-- Update component to Central repository. -->
-  <distributionManagement>
-    <snapshotRepository>
-      <id>ossrh</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-    </snapshotRepository>
-    <repository>
-      <id>ossrh</id>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-    </repository>
-  </distributionManagement>
+  <!--<distributionManagement>-->
+    <!--<snapshotRepository>-->
+      <!--<id>ossrh</id>-->
+      <!--<url>https://oss.sonatype.org/content/repositories/snapshots</url>-->
+    <!--</snapshotRepository>-->
+    <!--<repository>-->
+      <!--<id>ossrh</id>-->
+      <!--<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>-->
+    <!--</repository>-->
+  <!--</distributionManagement>-->
   <build>
     <plugins>
       <!-- Set used JRE version. -->

@@ -419,6 +419,7 @@ public class GXNet implements IGXMedia, AutoCloseable {
                             if (((Socket) it).getRemoteSocketAddress()
                                     .toString().equals(target)) {
                                 ((Socket) it).getOutputStream().write(buff);
+                                ((Socket) it).getOutputStream().flush();
                                 break;
                             }
                         }
@@ -441,6 +442,7 @@ public class GXNet implements IGXMedia, AutoCloseable {
         } else {
             if (getProtocol() == NetworkType.TCP) {
                 ((Socket) socket).getOutputStream().write(buff);
+                ((Socket) socket).getOutputStream().flush();
             } else if (getProtocol() == NetworkType.UDP) {
                 InetAddress addr = InetAddress.getByName(getHostName());
                 DatagramPacket p =
